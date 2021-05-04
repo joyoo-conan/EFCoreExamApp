@@ -80,6 +80,9 @@ namespace EFCoreExamApp
         {
             TestSrvDbContext dbContext = new TestSrvDbContext();
 
+            //20210505.CONAN.ADD - ListView 갱신시 초기화 처리
+            this.lvAccountLst.Items.Clear();
+
             var accounts = dbContext.Accounts.Where(p => p.UserID == this.tbxUserID.Text);
             
             if (accounts.ToList<TAccountMst>().Count > 0)
