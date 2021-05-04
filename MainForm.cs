@@ -53,6 +53,9 @@ namespace EFCoreExamApp
         {
             TestSrvDbContext dbContext = new TestSrvDbContext();
 
+            //20210505.CONAN.ADD - ListView 갱신시 초기화 처리
+            this.lvAccountLst.Items.Clear();
+
             var accountList = from accounts in dbContext.Accounts
                               join accountRole in dbContext.AccountRoleDtl
                               on accounts.RoleID equals accountRole.RoleID
@@ -79,9 +82,6 @@ namespace EFCoreExamApp
         private void OnSignUp_Click(object sender, EventArgs e)
         {
             TestSrvDbContext dbContext = new TestSrvDbContext();
-
-            //20210505.CONAN.ADD - ListView 갱신시 초기화 처리
-            this.lvAccountLst.Items.Clear();
 
             var accounts = dbContext.Accounts.Where(p => p.UserID == this.tbxUserID.Text);
             
