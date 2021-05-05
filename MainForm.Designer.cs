@@ -48,6 +48,7 @@ namespace EFCoreExamApp
             this.chPhone = new System.Windows.Forms.ColumnHeader();
             this.chRoleDesc = new System.Windows.Forms.ColumnHeader();
             this.chRegDTM = new System.Windows.Forms.ColumnHeader();
+            this.btnModify = new System.Windows.Forms.Button();
             this.gbxAccountInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -176,6 +177,8 @@ namespace EFCoreExamApp
             this.chPhone,
             this.chRoleDesc,
             this.chRegDTM});
+            this.lvAccountLst.FullRowSelect = true;
+            this.lvAccountLst.GridLines = true;
             this.lvAccountLst.HideSelection = false;
             this.lvAccountLst.Location = new System.Drawing.Point(332, 34);
             this.lvAccountLst.Name = "lvAccountLst";
@@ -183,6 +186,7 @@ namespace EFCoreExamApp
             this.lvAccountLst.TabIndex = 11;
             this.lvAccountLst.UseCompatibleStateImageBehavior = false;
             this.lvAccountLst.View = System.Windows.Forms.View.Details;
+            this.lvAccountLst.SelectedIndexChanged += new System.EventHandler(this.OnAccountLst_SelectedIndexChanged);
             // 
             // chUserID
             // 
@@ -213,11 +217,22 @@ namespace EFCoreExamApp
             this.chRegDTM.Text = "RegDate";
             this.chRegDTM.Width = 120;
             // 
+            // btnModify
+            // 
+            this.btnModify.Location = new System.Drawing.Point(34, 285);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(280, 35);
+            this.btnModify.TabIndex = 12;
+            this.btnModify.Text = "Modify";
+            this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.OnModify_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(918, 445);
+            this.Controls.Add(this.btnModify);
             this.Controls.Add(this.lvAccountLst);
             this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.gbxAccountInfo);
@@ -251,6 +266,7 @@ namespace EFCoreExamApp
         private System.Windows.Forms.ColumnHeader chPhone;
         private System.Windows.Forms.ColumnHeader chRoleDesc;
         private System.Windows.Forms.ColumnHeader chRegDTM;
+        private System.Windows.Forms.Button btnModify;
     }
 }
 
