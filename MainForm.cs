@@ -127,6 +127,8 @@ namespace EFCoreExamApp
                 dbContext.SaveChanges();
 
                 LoadAccount();
+
+                MessageBox.Show("Modify success");
             }
         }
 
