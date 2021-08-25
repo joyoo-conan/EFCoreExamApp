@@ -13,7 +13,7 @@ namespace EFCoreExamApp.Models
         {
             string conStr = string.Empty;
 
-            conStr = "data source=.\\SQLEXPRESS;initial catalog=TestSrvDB;user id=sa;password=jung@0083";
+            conStr = "data source=.\\SQLEXPRESS;initial catalog=TestSrvDB;user id=sa;password=1234";
 
             return conStr;
         }
